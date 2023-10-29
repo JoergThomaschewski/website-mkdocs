@@ -1,0 +1,29 @@
+site_name: Jörg Thomaschewski
+theme:
+  name: material
+  # name: material <- aus dem Video
+  # name: readthedocs <- von der Website
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: de
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Zum Dark-mode
+      primary: teal
+      accent: red
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Zum Light-mode     
+      primary: teal
+      accent: red  
