@@ -1,12 +1,41 @@
-site_name: Jörg Thomaschewski
+### Gernelles
+# venv aktivieren!
+# cmd
+# cd website-mkdocs
+# ./venv/Scripts/activate.bat
+# code .
+# site_url: https://thomaschewski.de/
+
+### Link zur mkdocs.yml und Mkdocs
+# https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml#L135C3-L138C1
+#   (aus dem Video)
+# https://squidfunk.github.io/mkdocs-material/getting-started/
+
+### ANSEHEN
+# https://github.com/liang2kl/mkdocs-blogging-plugin
+
+site_name: Jörg Thomaschewski - Infos -
 theme:
   name: material
   # name: material <- aus dem Video
-  # name: readthedocs <- von der Website
+  # name: readthedocs <- NEIN. Lizenz kostet Geld
+  # name: windmill <- NEIN. wenig Konfigurationsmöglichkeiten
+  # ansehen sphinx https://www.sphinx-doc.org/en/master/usage/quickstart.html 
+  # https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes
+  logo: assets/jt.jpg
+  # nav:                      # nur für windmill
+  # - HOME: index.md          # nur für windmill
+  extra_css:
+  - stylesheets/extra.css     # keine Ahnung, ob die eine Auswirkung hat https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#content-area-width 
   features:
     - navigation.tabs
     - navigation.sections
-    - navigation.top
+    - navigation.footer # gibt einen Zurück-Button im Footer
+    - navigation.tracking # siehe: https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
+    - navigation.expand
+    - navigation.path
+    #- navigation.indexes 
+    - navigation.top     # Pfeil nach oben wird angezeigt
     - toc.integrate
     - search.suggest
     - search.highlight
@@ -17,13 +46,46 @@ theme:
   palette:
     - scheme: default
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/toggle-switch-off-outline 
         name: Zum Dark-mode
-      primary: teal
-      accent: red
-    - scheme: slate
+      primary: indigo   # Hauptfarbe: https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color
+      accent: red 
+    - scheme: slate 
       toggle:
         icon: material/toggle-switch
-        name: Zum Light-mode     
-      primary: teal
-      accent: red  
+        name: Zum Light-mode    
+      primary: indigo
+      accent: red
+extra:
+  # generator: false # unterdrückt Made with Material for MkDocs https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#generator-notice
+  social:
+    - icon: fontawesome/brands/google
+      link: https://scholar.google.de/citations?user=-Oj8JzgAAAAJ
+    - icon: fontawesome/brands/researchgate
+      link: https://www.researchgate.net/profile/Joerg_Thomaschewski
+    - icon: fontawesome/brands/linkedin
+      link: https://de.linkedin.com/in/j%C3%B6rg-thomaschewski-7074786/de
+    - icon: fontawesome/brands/xing
+      link: https://www.xing.com/profile/Joerg_Thomaschewski
+    - icon: fontawesome/solid/envelope
+      link: mailto:joerg.thomaschewski@hs-emden-leer.de 
+markdown_extensions:
+  - attr_list  # https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+copyright: |
+  &copy; 2023 für alle Inhalte Jörg Thomaschewski --- [Impressum](impressum.md)
